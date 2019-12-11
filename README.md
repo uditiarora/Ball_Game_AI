@@ -1,2 +1,2 @@
-# Bird_Game_App
-Bird game built in JS with a twist ;)
+# Ball_Game_AI
+Ball game built in JS with a twist ;)

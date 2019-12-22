@@ -1,7 +1,7 @@
 class Pillar {
     constructor(){
         let empty_space = 125;
-        let center = random(empty_space, height - empty_space);
+        let center = random(empty_space,height-empty_space)
 
         this.top = center - empty_space/2;
         this.bottom = height - (center + empty_space/2);

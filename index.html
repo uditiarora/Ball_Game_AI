@@ -4,15 +4,28 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Bird Game App</title>
-
+        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+        <script language="javascript" type="text/javascript" src="./model/matrix.js"></script>
+        <script language="javascript" type="text/javascript" src="./model/neuralnetwork.js"></script>
+        <script language="javascript" type="text/javascript" src="./draw.js"></script>        
+        <script language="javascript" type="text/javascript" src="./utils.js"></script>
+        <script language="javascript" type="text/javascript" src="./ball.js"></script>
         <script language="javascript" type="text/javascript" src="./pillar.js"></script>
-        <script language="javascript" type="text/javascript" src="./draw.js"></script>
-
+        
     </head>
     
     <body>
         <h1>My Bird Game App in JS</h1>
-        
+        <div id="canvascontainer"></div>
+        <div class="bg">
+            Speed: <input id="speedSlider" type="range" min="1" max="10" value="1"> <span id="speed">1</span>
+            <br/> New Score: <span id="hs">0</span>
+            <br/> High Score: <span id="ahs">0</span>
+        </div>
+        <p id="best">
+            <span>Run Best</span>
+        </p>
     </body>
     
 </html>

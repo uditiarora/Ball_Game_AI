@@ -1,5 +1,5 @@
 let backgroundImg;
-let birdSprite;
+let ballSprite;
 let pillarUp;
 let pillarDown;
 let totalPopulation = 500;
@@ -18,7 +18,7 @@ let runBestButton;
 
 function preload(){
   backgroundImg = loadImage('images/background.jpg');
-  birdSprite = loadImage('images/ball.png');
+  ballSprite = loadImage('images/ball.png');
   pillarUp = loadImage('images/pillar.png');
   pillarDown = loadImage('images/pillar.png');
 }
@@ -37,9 +37,9 @@ function setup() {
   runBestButton.mousePressed(toggleState);
 
   for (let i = 0; i < totalPopulation; i++) {
-    let bird = new Bird();
-    activeBalls[i] = bird;
-    allBalls[i] = bird;
+    let ball = new Ball();
+    activeBalls[i] = ball;
+    allBalls[i] = ball;
   }
 }
 
@@ -67,23 +67,23 @@ function draw() {
       }
     }
     if (runBest) {
-      bestBird.think(pipes);
-      bestBird.update();
+      bestBall.think(pipes);
+      bestBall.update();
       for (let j = 0; j < pipes.length; j++) {
-        if (pipes[j].hits(bestBird)) {
+        if (pipes[j].hits(bestBall)) {
           resetGame();
           break;
         }
       }
 
-      if (bestBird.bottomTop()) {
+      if (bestBall.bottomTop()) {
         resetGame();
       }
     } else {
       for (let i = activeBalls.length - 1; i >= 0; i--) {
-        let bird = activeBalls[i];
-        bird.think(pipes);
-        bird.update();
+        let ball = activeBalls[i];
+        ball.think(pipes);
+        ball.update();
         for (let j = 0; j < pipes.length; j++) {
           if (pipes[j].hits(activeBalls[i])) {
             activeBalls.splice(i, 1);
@@ -91,7 +91,7 @@ function draw() {
           }
         }
 
-        if (bird.bottomTop()) {
+        if (ball.bottomTop()) {
           activeBalls.splice(i, 1);
         }
 
@@ -106,21 +106,21 @@ function draw() {
 
   let tempHighScore = 0;
   if (!runBest) {
-    let tempBestBird = null;
+    let tempBestBall = null;
     for (let i = 0; i < activeBalls.length; i++) {
       let s = activeBalls[i].score;
       if (s > tempHighScore) {
         tempHighScore = s;
-        tempBestBird = activeBalls[i];
+        tempBestBall = activeBalls[i];
       }
     }
 
     if (tempHighScore > highScore) {
       highScore = tempHighScore;
-      bestBird = tempBestBird;
+      bestBall = tempBestBall;
     }
   } else {
-    tempHighScore = bestBird.score;
+    tempHighScore = bestBall.score;
     if (tempHighScore > highScore) {
       highScore = tempHighScore;
     }
@@ -134,7 +134,7 @@ function draw() {
   }
 
   if (runBest) {
-    bestBird.show();
+    bestBall.show();
   } else {
     for (let i = 0; i < activeBalls.length; i++) {
       activeBalls[i].show();

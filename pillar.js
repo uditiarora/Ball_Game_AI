@@ -9,9 +9,9 @@ class Pipe {
     this.speed = 6;
   }
 
-  hits(bird) {
-    if ((bird.y - bird.r) < this.top || (bird.y + bird.r) > (height - this.bottom)) {
-      if (bird.x > this.x && bird.x < this.x + this.w) {
+  hits(ball) {
+    if ((ball.y - ball.r) < this.top || (ball.y + ball.r) > (height - this.bottom)) {
+      if (ball.x > this.x && ball.x < this.x + this.w) {
         return true;
       }
     }

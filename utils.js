@@ -1,7 +1,7 @@
 function resetGame() {
   counter = 0;
-  if (bestBird) {
-    bestBird.score = 0;
+  if (bestBall) {
+    bestBall.score = 0;
   }
   pipes = [];
 }
@@ -13,37 +13,37 @@ function nextGeneration() {
   allBalls = activeBalls.slice();
 }
 
-function generate(oldBirds) {
-  let newBirds = [];
-  for (let i = 0; i < oldBirds.length; i++) {
-    let bird = poolSelection(oldBirds);
-    newBirds[i] = bird;
+function generate(oldBalls) {
+  let newBalls = [];
+  for (let i = 0; i < oldBalls.length; i++) {
+    let ball = poolSelection(oldBalls);
+    newBalls[i] = ball;
   }
-  return newBirds;
+  return newBalls;
 }
 
-function normalizeFitness(birds) {
-  for (let i = 0; i < birds.length; i++) {
-    birds[i].score = pow(birds[i].score, 2);
+function normalizeFitness(balls) {
+  for (let i = 0; i < balls.length; i++) {
+    balls[i].score = pow(balls[i].score, 2);
   }
 
   let sum = 0;
-  for (let i = 0; i < birds.length; i++) {
-    sum += birds[i].score;
+  for (let i = 0; i < balls.length; i++) {
+    sum += balls[i].score;
   }
-  for (let i = 0; i < birds.length; i++) {
-    birds[i].fitness = birds[i].score / sum;
+  for (let i = 0; i < balls.length; i++) {
+    balls[i].fitness = balls[i].score / sum;
   }
 }
 
 
-function poolSelection(birds) {
+function poolSelection(balls) {
   let index = 0;
   let r = random(1);
   while (r > 0) {
-    r -= birds[index].fitness;
+    r -= balls[index].fitness;
     index += 1;
   }
   index -= 1;
-  return birds[index].copy();
+  return balls[index].copy();
 }

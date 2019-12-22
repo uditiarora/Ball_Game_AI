@@ -8,7 +8,7 @@ function mutate(x) {
   }
 }
 
-class Bird {
+class Ball {
   constructor(brain) {
     this.x = 64;
     this.y = height / 2;
@@ -27,11 +27,11 @@ class Bird {
   }
 
   copy() {
-    return new Bird(this.brain);
+    return new Ball(this.brain);
   }
 
   show() {
-    image(birdSprite, this.x, this.y, this.r * 2, this.r * 2);
+    image(ballSprite, this.x, this.y, this.r * 2, this.r * 2);
   }
   
   think(pipes) {

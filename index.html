@@ -1,33 +1,38 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css/style.css">  
+<html>
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>Bird Game App</title>
-        <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
   <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
-        <script language="javascript" type="text/javascript" src="./model/matrix.js"></script>
-        <script language="javascript" type="text/javascript" src="./model/neuralnetwork.js"></script>
-        <script language="javascript" type="text/javascript" src="./draw.js"></script>        
-        <script language="javascript" type="text/javascript" src="./utils.js"></script>
-        <script language="javascript" type="text/javascript" src="./ball.js"></script>
-        <script language="javascript" type="text/javascript" src="./pillar.js"></script>
-        
-    </head>
-    
-    <body>
-        <h1>My Bird Game App</h1>
-        <div id="canvascontainer"></div>
-        <div class="bg">
-            Speed: <input id="speedSlider" type="range" min="1" max="10" value="1"> <span id="speed">1</span>
-            <br/> New Score: <span id="hs">0</span>
-            <br/> High Score: <span id="ahs">0</span>
-        </div>
-        <p id="best">
-            <span>Run Best</span>
-        </p>
-    </body>
-    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script language="javascript" type="text/javascript" src="./model/neuralNetwork.js"></script>
+  <script language="javascript" type="text/javascript" src="./model/matrix.js"></script>
+  <script language="javascript" type="text/javascript" src="./draw.js"></script>
+  <script language="javascript" type="text/javascript" src="./utils.js"></script>
+  <script language="javascript" type="text/javascript" src="./ball.js"></script>
+  <script language="javascript" type="text/javascript" src="./pillar.js"></script>
+  
+</head>
+
+<body class="back">
+  <br>
+  <br>
+  <br>
+  
+  <div id="canvascontainer"></div>
+  <div class="bg">
+    Speed: <input id="speedSlider" type="range" min="1" max="10" value="1"> <span id="speed">1</span>
+    <br/> New Score: <span id="hs">0</span>
+    <br/> High Score: <span id="ahs">0</span>
+  </div>
+  <p id="best">
+    <span>Run Best</span>
+  </p>
+  
+  
+</body>
+
+
 </html>

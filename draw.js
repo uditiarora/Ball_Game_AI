@@ -16,6 +16,18 @@ let highScore = 0;
 let runBest = false;
 let runBestButton;
 
+function toggleState() {
+    runBest = !runBest;
+    if(runBest){
+        resetGame();
+        runBestButton.html('Continue Training');
+
+    }
+    else{
+        nextGeneration();
+        runBestButton.html('Run Best')
+    }
+}
 
 function setup(){
     let canvas = createCanvas(700,400);
@@ -40,18 +52,7 @@ function setup(){
 
 }
 
-function toggleState() {
-    runBest = !runBest;
-    if(runBest){
-        resetGame();
-        runBestButton.html('Continue Training');
 
-    }
-    else{
-        nextGeneration();
-        runBestButton.html('Run Best')
-    }
-}
 
 function preload(){
     backgroundImg = loadImage('images/background.jpg');

@@ -28,7 +28,7 @@ class Pillar {
 
     }
 
-    updatePositionPipe(){
+    update(){
         this.x -= this.speed;
     }
 

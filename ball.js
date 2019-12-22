@@ -33,7 +33,7 @@ class Ball{
     copy(){
         return new Ball(this.brain);
     }
-    show(){
+    showPillar(){
         image(ballImg,this.x, this.y, this.r*2, this.r*2);
     }
 

@@ -5,17 +5,20 @@
   float: right;
   margin-right: 80px;
   font-family: 'Righteous', cursive;
-  color: tomato;
+  color: #ccd6f6;
 }
 .back {
-  background: #f3f8ff;
+  background: #172a45;
 }
 
 .canvascontainer {
     border-radius: 12px;
-    align-self: center;
+    align-self: center;   
 }
 
+canvas {
+  border : 5px solid #64ffda;
+}
 #best {
   font-family: 'Hind Guntur', sans-serif;
   font-size: 15px;
@@ -29,6 +32,7 @@
   cursor: pointer;
   border: 0;
   border-radius: 2px;
+  
   min-width: 120px;
   overflow: hidden;
 

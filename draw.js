@@ -25,6 +25,7 @@ function preload(){
 
 function setup() {
   let canvas = createCanvas(700, 400);
+  canvas.style('border','5px solid #64ffda');
   var x = (windowWidth - width) / 2;
   var y = (windowHeight - height) / 2;
   canvas.position(x, y);

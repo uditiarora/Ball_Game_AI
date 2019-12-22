@@ -9,25 +9,25 @@ function mutate(x) {
 }
 
 class Ball {
-  constructor(brain) {
+  constructor(memory) {
     this.x = 64;
     this.y = height / 2;
     this.r = 12;
     this.gravity = 0.8;
     this.lift = -12;
     this.velocity = 0;
-    if (brain instanceof NeuralNetwork) {
-      this.brain = brain.copy();
-      this.brain.mutate(mutate);
+    if (memory instanceof NeuralNetwork) {
+      this.memory = memory.copy();
+      this.memory.mutate(mutate);
     } else {
-      this.brain = new NeuralNetwork(5, 8, 2);
+      this.memory = new NeuralNetwork(5, 8, 2);
     }
     this.score = 1;
     this.fitness = 0;
   }
 
   copy() {
-    return new Ball(this.brain);
+    return new Ball(this.memory);
   }
 
   show() {
@@ -53,7 +53,7 @@ class Ball {
       inputs[3] = map(this.y, 0, height, 0, 1);
       inputs[4] = map(this.velocity, -5, 5, 0, 1);
 
-      let action = this.brain.predict(inputs);
+      let action = this.memory.predict(inputs);
       if (action[1] > action[0]) {
         this.up();
       }
@@ -71,6 +71,6 @@ class Ball {
   update() {
     this.velocity += this.gravity;
     this.y += this.velocity;
-    this.score++;
+    this.score += 0.1;
   }
 }
